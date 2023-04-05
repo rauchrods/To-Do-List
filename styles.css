@@ -149,7 +149,7 @@ h2,h1{
     cursor: pointer;
 }
 
-.modalcontainer{
+.modalcontainer,.deletemodalcontainer{
     /* border: 5px solid black; */
     left: 0;
     right: 0;
@@ -193,14 +193,29 @@ textarea{
     border: 1px solid lightgray;
     resize: none;
 }
-.butclass{
+.butclass,.delbutclass{
   display: flex;
   justify-content: center;
   column-gap: 10px;
 }
-.butclass>input{
+.butclass>input, .delbutclass>input{
     width:100px;
     cursor: pointer;
+}
+
+.deleteinnermodal{
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-items: ce;
+    padding: 10px;
+    row-gap: 20px;
+    width: 50%;
+    height: 100px;
+    border-radius: 10px;
 }
 
 @media screen and  (max-width:600px) {

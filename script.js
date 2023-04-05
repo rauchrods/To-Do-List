@@ -3,6 +3,7 @@ let Tasks = [];
 let global_id = -1;
 
 let modalcontobj = document.querySelector(".modalcontainer");
+let delmodalobj = document.querySelector(".deletemodalcontainer");
 
 function hideform() {
     modalcontobj.classList.add("modalcontainerhide");
@@ -10,6 +11,14 @@ function hideform() {
 
 function showform() {
     modalcontobj.classList.remove("modalcontainerhide");
+}
+
+function hidedeletemodal(){
+    delmodalobj.classList.add("modalcontainerhide");
+}
+
+function opendeletemodal(){
+    delmodalobj.classList.remove("modalcontainerhide");
 }
 
 let formobj = document.querySelector("form");
@@ -171,8 +180,18 @@ function edittask(eid) {
     global_id = eid;
 }
 
-function deletetask(id){
+async function deletetask(id){
+
+    await delmodalobj.classList.remove("modalcontainerhide");
+
+     let delbuttonobj = document.querySelector(".delbutclass>input:nth-child(1)");
+
+     await delbuttonobj.addEventListener( "click", newdeletetask(id));
     
+}
+
+function newdeletetask(id){
+    console.log("hi")
     for (let i = 0; i < Tasks.length; i++) {
         if (Tasks[i].id == id) {
             Tasks.splice(i,1);
@@ -185,8 +204,9 @@ function deletetask(id){
         Tasks[i].id = newid;
         newid++;
     }
-    localStorage.setItem("Tasks", JSON.stringify(Tasks));
+    localStorage.setItem("Tasks", JSON.stringify(Tasks));       
     alert(`Task No ${id} Sucessfully Deleted`);
+    delmodalobj.classList.add("modalcontainerhide");
     showcards(Tasks);
 }
 
@@ -199,7 +219,7 @@ function cleardetails(){
 
 (()=>{
  
-    Tasks = JSON.parse(localStorage.getItem("Tasks")) ;
+    Tasks = JSON.parse(localStorage.getItem("Tasks")) || [];
 
     showcards(Tasks);
     removeunwanteddesc();
