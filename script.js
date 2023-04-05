@@ -13,11 +13,11 @@ function showform() {
     modalcontobj.classList.remove("modalcontainerhide");
 }
 
-function hidedeletemodal(){
+function hidedeletemodal() {
     delmodalobj.classList.add("modalcontainerhide");
 }
 
-function opendeletemodal(){
+function opendeletemodal() {
     delmodalobj.classList.remove("modalcontainerhide");
 }
 
@@ -42,10 +42,10 @@ formobj.addEventListener("submit", (e) => {
             }
         }
         Tasks[index].title = document.querySelector("#title").value;
-        Tasks[index].date = document.querySelector("#date").value ; 
-        Tasks[index].description=document.querySelector("#description").value ;
+        Tasks[index].date = document.querySelector("#date").value;
+        Tasks[index].description = document.querySelector("#description").value;
 
-        localStorage.setItem("Tasks",JSON.stringify(Tasks));
+        localStorage.setItem("Tasks", JSON.stringify(Tasks));
 
         showcards(Tasks);
         removeunwanteddesc();
@@ -53,7 +53,7 @@ formobj.addEventListener("submit", (e) => {
         cleardetails();
         hideform();
         alert("Card sucessfully updated!");
-      
+
         return;
     }
 
@@ -68,7 +68,7 @@ formobj.addEventListener("submit", (e) => {
         description: descriptionstr
     }
     Tasks.push(task);
-    localStorage.setItem("Tasks",JSON.stringify(Tasks));
+    localStorage.setItem("Tasks", JSON.stringify(Tasks));
     hideform();
     alert("Task Sucessfully added");
     showcards(Tasks);
@@ -80,19 +80,19 @@ formobj.addEventListener("submit", (e) => {
 
 
 
-searbar.addEventListener("input",()=>{
-  
+searbar.addEventListener("input", () => {
+
     let input_search = "";
     input_search = searbar.value.toLowerCase();
 
     console.log(input_search);
 
     let cardarr = document.querySelectorAll(".taskcard");
-    cardarr.forEach((cardobj)=>{
+    cardarr.forEach((cardobj) => {
 
-        let targstr =   cardobj.querySelector("span").textContent.toLowerCase();
+        let targstr = cardobj.querySelector("span").textContent.toLowerCase();
 
-        if (targstr.indexOf(input_search) > -1 ) {
+        if (targstr.indexOf(input_search) > -1) {
 
             cardobj.style.display = "";
         }
@@ -100,21 +100,21 @@ searbar.addEventListener("input",()=>{
             cardobj.style.display = "none";
         }
     });
-    
+
 });
 
 
 function showcards(Tasks) {
-    
+
     let taskcontaner = document.querySelector(".taskcardcontainer");
-    
+
     let str = "";
 
-    if(Tasks.length==0){
-        str=`
+    if (Tasks.length == 0) {
+        str = `
         <span>There are no tasks added by you currently please add some tasks..</span>
         `
-        taskcontaner.innerHTML=str;
+        taskcontaner.innerHTML = str;
         return;
     }
 
@@ -180,45 +180,50 @@ function edittask(eid) {
     global_id = eid;
 }
 
-async function deletetask(id){
+let delbuttonobj = document.querySelector(".delbutclass>input:nth-child(1)");
 
-    await delmodalobj.classList.remove("modalcontainerhide");
+function deletetask(id) {
 
-     let delbuttonobj = document.querySelector(".delbutclass>input:nth-child(1)");
+    delmodalobj.classList.remove("modalcontainerhide");
+    global_id=id;
+   
 
-     await delbuttonobj.addEventListener( "click", newdeletetask(id));
-    
 }
 
-function newdeletetask(id){
+
+
+delbuttonobj.addEventListener("click", ()=>{
+
     console.log("hi")
     for (let i = 0; i < Tasks.length; i++) {
-        if (Tasks[i].id == id) {
-            Tasks.splice(i,1);
+        if (Tasks[i].id == global_id) {
+            Tasks.splice(i, 1);
             break;
         }
     }
 
-    let newid=1;
+    let newid = 1;
     for (let i = 0; i < Tasks.length; i++) {
         Tasks[i].id = newid;
         newid++;
     }
-    localStorage.setItem("Tasks", JSON.stringify(Tasks));       
-    alert(`Task No ${id} Sucessfully Deleted`);
+    localStorage.setItem("Tasks", JSON.stringify(Tasks));
+    alert(`Task No ${global_id} Sucessfully Deleted`);
     delmodalobj.classList.add("modalcontainerhide");
     showcards(Tasks);
+});
+
+
+
+
+function cleardetails() {
+    document.querySelector("#title").value = "";
+    document.querySelector("#date").value = "";
+    document.querySelector("#description").value = "";
 }
 
+(() => {
 
-function cleardetails(){
-    document.querySelector("#title").value="";
-    document.querySelector("#date").value="";
-    document.querySelector("#description").value="";
-}
-
-(()=>{
- 
     Tasks = JSON.parse(localStorage.getItem("Tasks")) || [];
 
     showcards(Tasks);
