@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>To-Do List</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="./icons8-spiral-notepad-emoji-96.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+</head>
+
+<body>
+
+    <div class="main-container">
+        <h1>To-Do List</h1>
+        <div class="taskaddition" onclick="showform()">
+            <span>Add New Task</span>
+            <span class="material-icons">
+                add_box
+            </span>
+        </div>
+        <div class="searccontainer">
+            <input type="search" name="search" id="searchbox" placeholder="Search your Tasks here">
+            <span class="material-icons">
+                search
+            </span>
+        </div>
+        <h2>Tasks</h2>
+         <div class="taskcardcontainer">
+            <!-- <div class="taskcard">
+                <span>Title</span>
+                <div>
+                    <span>2022-02-15</span>
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus quasi ut qui maiores obcaecati
+                        labore ducimus asperiores nulla fuga assumenda cumque amet facilis, eos laborum, suscipit iusto
+                        dolorem eaque magnam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione voluptates veritatis voluptate consectetur natus tempore ipsam doloribus non consequatur in incidunt culpa recusandae, similique quam debitis maxime iusto provident nostrum, quis delectus saepe accusantium quos amet? Eos expedita debitis nemo incidunt, ipsum ab asperiores odit corrupti placeat, laudantium, natus quae? Enim totam deleniti fugiat facere eos, debitis quae laborum rerum omnis possimus ab at quaerat accusamus neque atque alias perspiciatis pariatur placeat doloremque dolores distinctio quo iusto? Ullam, illum delectus. Rem corrupti, cumque quasi accusantium aspernatur atque doloremque molestias mollitia sint amet omnis exercitationem et libero consectetur dolorem! Dicta, iste.</p>
+                </div>
+                <div class="taskiconcont" >
+                    <span class="material-icons">
+                        edit_note
+                    </span>
+                    <span class="material-icons">
+                        delete
+                    </span>
+                </div>
+                
+            </div> -->
+            <!-- <div class="taskcard">
+                <span>Title</span>
+                <div>
+                    <span>2022-02-15</span>
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus quasi ut qui maiores obcaecati
+                        labore ducimus asperiores nulla fuga assumenda cumque amet facilis, eos laborum, suscipit iusto
+                        dolorem eaque magnam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione voluptates veritatis voluptate consectetur natus tempore ipsam doloribus non consequatur in incidunt culpa recusandae, similique quam debitis maxime iusto provident nostrum, quis delectus saepe accusantium quos amet? Eos expedita debitis nemo incidunt, ipsum ab asperiores odit corrupti placeat, laudantium, natus quae? Enim totam deleniti fugiat facere eos, debitis quae laborum rerum omnis possimus ab at quaerat accusamus neque atque alias perspiciatis pariatur placeat doloremque dolores distinctio quo iusto? Ullam, illum delectus. Rem corrupti, cumque quasi accusantium aspernatur atque doloremque molestias mollitia sint amet omnis exercitationem et libero consectetur dolorem! Dicta, iste.</p>
+                </div>
+                <div class="taskiconcont" >
+                    <span class="material-icons">
+                        edit_note
+                    </span>
+                    <span class="material-icons">
+                        delete
+                    </span>
+                </div>
+                
+            </div>
+            <div class="taskcard">
+                <span>Title</span>
+                <div>
+                    <span>2022-02-15</span>
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus quasi ut qui maiores obcaecati
+                        labore ducimus asperiores nulla fuga assumenda cumque amet facilis, eos laborum, suscipit iusto
+                        dolorem eaque magnam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione voluptates veritatis voluptate consectetur natus tempore ipsam doloribus non consequatur in incidunt culpa recusandae, similique quam debitis maxime iusto provident nostrum, quis delectus saepe accusantium quos amet? Eos expedita debitis nemo incidunt, ipsum ab asperiores odit corrupti placeat, laudantium, natus quae? Enim totam deleniti fugiat facere eos, debitis quae laborum rerum omnis possimus ab at quaerat accusamus neque atque alias perspiciatis pariatur placeat doloremque dolores distinctio quo iusto? Ullam, illum delectus. Rem corrupti, cumque quasi accusantium aspernatur atque doloremque molestias mollitia sint amet omnis exercitationem et libero consectetur dolorem! Dicta, iste.</p>
+                </div>
+                <div class="taskiconcont" >
+                    <span class="material-icons">
+                        edit_note
+                    </span>
+                    <span class="material-icons">
+                        delete
+                    </span>
+                </div>
+                
+            </div>
+            <div class="taskcard">
+                <span>Title</span>
+                <div>
+                    <span>2022-02-15</span>
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus quasi ut qui maiores obcaecati
+                        labore ducimus asperiores nulla fuga assumenda cumque amet facilis, eos laborum, suscipit iusto
+                        dolorem eaque magnam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione voluptates veritatis voluptate consectetur natus tempore ipsam doloribus non consequatur in incidunt culpa recusandae, similique quam debitis maxime iusto provident nostrum, quis delectus saepe accusantium quos amet? Eos expedita debitis nemo incidunt, ipsum ab asperiores odit corrupti placeat, laudantium, natus quae? Enim totam deleniti fugiat facere eos, debitis quae laborum rerum omnis possimus ab at quaerat accusamus neque atque alias perspiciatis pariatur placeat doloremque dolores distinctio quo iusto? Ullam, illum delectus. Rem corrupti, cumque quasi accusantium aspernatur atque doloremque molestias mollitia sint amet omnis exercitationem et libero consectetur dolorem! Dicta, iste.</p>
+                </div>
+                <div class="taskiconcont" >
+                    <span class="material-icons">
+                        edit_note
+                    </span>
+                    <span class="material-icons">
+                        delete
+                    </span>
+                </div>
+                
+            </div>
+            <div class="taskcard">
+                <span>Title</span>
+                <div>
+                    <span>2022-02-15</span>
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus quasi ut qui maiores obcaecati
+                        labore ducimus asperiores nulla fuga assumenda cumque amet facilis, eos laborum, suscipit iusto
+                        dolorem eaque magnam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione voluptates veritatis voluptate consectetur natus tempore ipsam doloribus non consequatur in incidunt culpa recusandae, similique quam debitis maxime iusto provident nostrum, quis delectus saepe accusantium quos amet? Eos expedita debitis nemo incidunt, ipsum ab asperiores odit corrupti placeat, laudantium, natus quae? Enim totam deleniti fugiat facere eos, debitis quae laborum rerum omnis possimus ab at quaerat accusamus neque atque alias perspiciatis pariatur placeat doloremque dolores distinctio quo iusto? Ullam, illum delectus. Rem corrupti, cumque quasi accusantium aspernatur atque doloremque molestias mollitia sint amet omnis exercitationem et libero consectetur dolorem! Dicta, iste.</p>
+                </div>
+                <div class="taskiconcont" >
+                    <span class="material-icons">
+                        edit_note
+                    </span>
+                    <span class="material-icons">
+                        delete
+                    </span>
+                </div>
+                
+            </div>
+            <div class="taskcard">
+                <span>Title</span>
+                <div>
+                    <span>2022-02-15</span>
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus quasi ut qui maiores obcaecati
+                        labore ducimus asperiores nulla fuga assumenda cumque amet facilis, eos laborum, suscipit iusto
+                        dolorem eaque magnam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione voluptates veritatis voluptate consectetur natus tempore ipsam doloribus non consequatur in incidunt culpa recusandae, similique quam debitis maxime iusto provident nostrum, quis delectus saepe accusantium quos amet? Eos expedita debitis nemo incidunt, ipsum ab asperiores odit corrupti placeat, laudantium, natus quae? Enim totam deleniti fugiat facere eos, debitis quae laborum rerum omnis possimus ab at quaerat accusamus neque atque alias perspiciatis pariatur placeat doloremque dolores distinctio quo iusto? Ullam, illum delectus. Rem corrupti, cumque quasi accusantium aspernatur atque doloremque molestias mollitia sint amet omnis exercitationem et libero consectetur dolorem! Dicta, iste.</p>
+                </div>
+                <div class="taskiconcont" >
+                    <span class="material-icons">
+                        edit_note
+                    </span>
+                    <span class="material-icons">
+                        delete
+                    </span>
+                </div>
+                
+            </div> -->
+         </div>
+       
+        
+
+    </div>
+
+    <div class="modalcontainer modalcontainerhide">
+        
+            <form action="">
+                <caption>Enter the Task Details</caption>
+                <input type="text" name="title" id="title" placeholder="Enter the Ttle of task*" required>
+                <input type="date" name="date" id="date" placeholder="Enter the date" required>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Desciption of your task" ></textarea>
+                <div class="butclass">
+                    <input type="submit" value="Add" >
+                    <input type="button" value="Cancel" onclick="hideform()">
+                </div>                
+             </form>
+        
+    </div>
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
