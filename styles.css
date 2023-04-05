@@ -1,5 +1,7 @@
 body{
     display: flex;
+    flex-direction: column;
+    row-gap: 20px;
     justify-content: center;
     align-items: center;
     margin: 0;
@@ -121,7 +123,12 @@ h2,h1{
     border: 1px solid lightgray;
     border-radius: 6px;
     background-color: #FEFAE0;
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 20px;
+    font-weight: lighter;
+    color: rgba(0, 0, 0, 0.774);
+
     
 }
 .desciptionchide{

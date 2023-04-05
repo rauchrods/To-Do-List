@@ -96,8 +96,20 @@ searbar.addEventListener("input",()=>{
 
 
 function showcards(Tasks) {
+    
     let taskcontaner = document.querySelector(".taskcardcontainer");
+    
     let str = "";
+
+    if(Tasks.length==0){
+        str=`
+        <span>There are no tasks added by you currently please add some tasks..</span>
+        `
+        taskcontaner.innerHTML=str;
+        return;
+    }
+
+
     for (let i = 0; i < Tasks.length; i++) {
         str += `
           <div class="taskcard">
